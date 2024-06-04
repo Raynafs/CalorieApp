@@ -1,4 +1,5 @@
 pluginManagement {
+    includeBuild("convention")
     repositories {
         google {
             content {
@@ -21,4 +22,10 @@ dependencyResolutionManagement {
 
 rootProject.name = "CalorieApp"
 include(":app")
- 
+include(":ui")
+include(":ui:presentation")
+include(":ui:designsystem")
+include(":data")
+include(":domain")
+include(":domain:remote")
+include(":domain:local")
