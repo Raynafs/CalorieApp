@@ -1,7 +1,7 @@
 plugins {
     id("calorie.convention.library")
-    id("calorie.convention.hilt")
     id("calorie.convention.compose.library")
+    id("calorie.convention.hilt")
 }
 
 android { namespace = "com.rachel.presentation" }
@@ -15,20 +15,14 @@ dependencies {
 
     implementation(project(AndroidModules.Domain.local))
 
-    //
+
     implementation(project(AndroidModules.Data.data))
 
     implementation(libs.bundles.compose)
 
-    // firebase
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.bundles.firebase)
-    implementation(libs.androidx.core.splashscreen)
 
     implementation(libs.androidx.appcompat)
     implementation(libs.compose.material3)
-
-    implementation(libs.google.play.services)
 
 
 }

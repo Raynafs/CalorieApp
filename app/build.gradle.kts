@@ -2,8 +2,6 @@
 plugins {
     id("calorie.convention.application")
     id("calorie.convention.compose.application")
-    id("calorie.convention.hilt")
-    alias(libs.plugins.ktlint)
 }
 
 android {
@@ -31,4 +29,6 @@ dependencies {
     implementation(project(AndroidModules.Ui.presentation))
     implementation(project(AndroidModules.Ui.designsystem))
     implementation(project(AndroidModules.Data.data))
+    implementation(project(AndroidModules.Domain.local))
+    implementation(project(AndroidModules.Domain.remote))
 }

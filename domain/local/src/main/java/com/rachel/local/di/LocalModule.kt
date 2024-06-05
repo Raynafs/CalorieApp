@@ -3,6 +3,8 @@ package com.rachel.local.di
 import android.app.Application
 import android.content.Context
 import androidx.room.Room
+import com.rachel.local.CalorieDatabase
+import com.rachel.local.dao.CalorieDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

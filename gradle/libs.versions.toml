@@ -183,10 +183,6 @@ compose = [
     "compose-lifecycle-livedata-ktx", "compose-lifecycle-runtime", "compose-lifecycle-viewModel",
     "androidx-navigation-compose"
 ]
-room = [
-    "room-runtime", "room-compiler", "room-extensions","room-testing"
-]
-
 firebase = [
     "firebase-messaging", "firebase-crashlytics", "firebase-analytics",
     "firebase-performance", "firebase-config", "firebase-dynamic-links",
