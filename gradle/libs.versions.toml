@@ -24,7 +24,7 @@ androidx-core-ktx = "1.10.1"
 androidx-test-ext-junit = "1.1.5"
 androidx-test-espresso = "3.5.1"
 androidx-work-manager = "2.8.1"
-androidx-room = "2.6.0"
+androidx-room = "2.6.1"
 androidx-datastore = "1.0.0"
 androidx-hilt = "2.45"
 androidx-navigation = "2.6.0"
@@ -142,8 +142,6 @@ firebase-dynamic-links = { module = "com.google.firebase:firebase-dynamic-links-
 
 google_play_services = { group = "com.google.android.gms", name = "play-services-auth", version.ref = "google_play_services" }
 
-stepper = { group = "com.github.maryamrzdh", name = "compose-stepper", version.ref = "stepper" }
-
 
 # coil
 coil-kt = { group = "io.coil-kt", name = "coil", version.ref = "coil" }
@@ -185,6 +183,10 @@ compose = [
     "compose-lifecycle-livedata-ktx", "compose-lifecycle-runtime", "compose-lifecycle-viewModel",
     "androidx-navigation-compose"
 ]
+room = [
+    "room-runtime", "room-compiler", "room-extensions","room-testing"
+]
+
 firebase = [
     "firebase-messaging", "firebase-crashlytics", "firebase-analytics",
     "firebase-performance", "firebase-config", "firebase-dynamic-links",

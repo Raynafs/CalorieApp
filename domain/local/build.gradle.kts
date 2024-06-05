@@ -7,5 +7,6 @@ dependencies {
     // datastore
     implementation(libs.androidx.datastore.preference)
     implementation(libs.androidx.datastore.proto)
+    implementation(libs.bundles.room)
     implementation(project(":domain:remote"))
 }
