@@ -1,4 +1,5 @@
-plugins { id("calorie.convention.module") }
+plugins {
+    id("calorie.convention.module") }
 
 android { namespace = "com.rachel.local" }
 

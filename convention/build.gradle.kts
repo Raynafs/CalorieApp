@@ -51,5 +51,9 @@ gradlePlugin {
             id = "calorie.convention.feature"
             implementationClass = "FeatureConventionPlugin"
         }
+        register("androidRoom") {
+            id = "calorie.convention.room"
+            implementationClass = "RoomConventionPlugin"
+        }
     }
 }
