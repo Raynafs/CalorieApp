@@ -61,6 +61,7 @@ pushy = "1.0.94"
 twilio = "5.7.2"
 
 ktlint = "11.5.1"
+navigationTesting = "2.7.7"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "testing-junit" }
@@ -159,6 +160,7 @@ material = { group = "com.google.android.material", name = "material", version.r
 accompanist = { group = "com.google.accompanist", name = "accompanist-pager", version.ref = "accompanist" }
 accompanist-indicators = { group = "com.google.accompanist", name = "accompanist-pager-indicators", version.ref = "accompanist" }
 compose-cpp-emoji = {module = "com.github.jump-sdk:jetpack_compose_country_code_picker_emoji", version.ref = "compose-cpp"}
+navigation-testing = { group = "androidx.navigation", name = "navigation-testing", version.ref = "navigationTesting" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "gradle-plugin-android" }
