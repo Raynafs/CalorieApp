@@ -1,8 +1,8 @@
 package com.rachel.calorieapp
 
-import android.app.Application
+
+import com.rachel.presentation.MainApplication
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class CalorieApp: Application() {
-}
+class CalorieApp: MainApplication()

@@ -1,6 +1,7 @@
 package com.rachel.data.mappers
 
-import com.rachel.local.modelsmodels.CalorieEntity
+import com.rachel.data.models.Calorie
+import com.rachel.local.models.NutrientsEntity
 import com.rachel.remote.models.CalorieDto
 
 
@@ -21,7 +22,7 @@ fun CalorieDto?.toUiModel() = this?.let {
     )
 }
 
-fun CalorieEntity?.toUiModel() = this?.let {
+fun NutrientsEntity?.toUiModel() = this?.let {
     Calorie(
         name,
         calories,
@@ -39,7 +40,7 @@ fun CalorieEntity?.toUiModel() = this?.let {
 }
 
 fun Calorie?.toDatabaseModel() = this?.let {
-    CalorieEntity(
+    NutrientsEntity(
         name,
         calories,
         servingSizeGrams,

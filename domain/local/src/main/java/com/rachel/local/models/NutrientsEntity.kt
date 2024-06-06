@@ -1,12 +1,11 @@
-package com.rachel.local.modelsmodels
+package com.rachel.local.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.util.*
 
-
 @Entity(tableName = "calories")
-data class CalorieEntity(
+data class NutrientsEntity(
     @PrimaryKey
     val name: String = UUID.randomUUID().toString(),
     val calories: Double,

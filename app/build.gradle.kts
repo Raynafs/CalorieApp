@@ -2,6 +2,7 @@
 plugins {
     id("calorie.convention.application")
     id("calorie.convention.compose.application")
+    id("calorie.convention.hilt")
 }
 
 android {

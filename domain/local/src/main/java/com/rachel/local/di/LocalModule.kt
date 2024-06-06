@@ -1,9 +1,8 @@
 package com.rachel.local.di
 
-import android.app.Application
 import android.content.Context
 import androidx.room.Room
-import com.rachel.local.CalorieDatabase
+import com.rachel.local.NutrientsDatabase
 import com.rachel.local.dao.CalorieDao
 import dagger.Module
 import dagger.Provides
@@ -19,15 +18,15 @@ object LocalModule {
 
     @Provides
     @Singleton
-    fun providesDatabase(@ApplicationContext context: Context): CalorieDatabase =
+    fun providesDatabase(@ApplicationContext context: Context): NutrientsDatabase =
         Room.databaseBuilder(
             context = context,
-            klass = CalorieDatabase::class.java,
-            name = CalorieDatabase.DATABASE_NAME
+            klass = NutrientsDatabase::class.java,
+            name = NutrientsDatabase.DATABASE_NAME
         ).build()
 
     @Provides
     @Singleton
-    fun providesCalorieDao(database: CalorieDatabase): CalorieDao = database.calorieDao()
+    fun providesCalorieDao(database: NutrientsDatabase): CalorieDao = database.calorieDao()
 
 }

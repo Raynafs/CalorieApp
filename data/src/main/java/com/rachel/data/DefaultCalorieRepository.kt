@@ -1,5 +1,8 @@
 package com.rachel.data
 
+import com.rachel.data.mappers.toDatabaseModel
+import com.rachel.data.mappers.toUiModel
+import com.rachel.data.models.Calorie
 import com.rachel.data.models.Resource
 import com.rachel.local.dao.CalorieDao
 import com.rachel.remote.CalorieApi
@@ -17,7 +20,7 @@ class DefaultCalorieRepository (
     private val dispatcher = Dispatchers.IO
 
     override fun getCalories(): Flow<List<Calorie>> =
-        dao.searchCalories().map { list -> list.mapNotNull { it.toUiModel() } }
+        dao.searchNutrients().map { list -> list.mapNotNull { it.toUiModel() } }
 
     override fun getCalorie(name: String): Flow<Calorie> =
         dao.getCalorie(name = name).mapNotNull { it.toUiModel() }
