@@ -29,3 +29,10 @@ val NeutralDark = Color(0xFFBEBEBE)
 
 val TryBlue = Color(0xFFADD8E6)
 val PureBlack = Color(0xFF000000)
+
+// The pallete
+val Peach = Color(0xFFFCF4DD)
+val PurpleHeaven = Color(0xFFE8DFF5)
+val LightPink = Color(0xFFFCE1E4)
+val LightGreen = Color(0xFFDDEDEA)
+val UniqueBlue = Color(0xFFDAEAF6)
