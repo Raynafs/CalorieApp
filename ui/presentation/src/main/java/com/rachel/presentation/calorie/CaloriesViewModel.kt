@@ -34,7 +34,8 @@ import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalCoroutinesApi::class)
 @HiltViewModel
-class CaloriesViewModel @Inject constructor(val repository: CalorieRepository) : ViewModel() {
+class CaloriesViewModel @Inject constructor(private val repository: CalorieRepository) :
+    ViewModel() {
 
     private val _query = MutableStateFlow("")
     val query: Flow<String>
@@ -48,7 +49,7 @@ class CaloriesViewModel @Inject constructor(val repository: CalorieRepository) :
     val hasError: Flow<String?>
         get() = _hasError
 
-    private val _isEmpty = MutableStateFlow<Boolean>(false)
+    private val _isEmpty = MutableStateFlow(false)
     val isEmpty: Flow<Boolean>
         get() = _isEmpty
 
@@ -60,7 +61,7 @@ class CaloriesViewModel @Inject constructor(val repository: CalorieRepository) :
     val calories: Flow<List<Calorie>>
         get() = _calories
 
-    var searchJob: Job? = null
+    private var searchJob: Job? = null
     private var hasAlreadyLoadedOnce: Boolean = false
 
     init {
