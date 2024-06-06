@@ -24,5 +24,6 @@ The proposed architecture consists of 3 main modules;
 
 Below is a picture describing the modularisation technique
 
+![modularise.png](ui%2Fpresentation%2Fsrc%2Fmain%2Fres%2Fdrawable%2Fmodularise.png)
 
 ## Illustration
