@@ -12,5 +12,5 @@ val PureWhite = Color(0xFFFFFFFF)
 
 val NeutralDark = Color(0xFFBEBEBE)
 
-val TryBlue = Color(0xFF7AA9FD)
+val TryBlue = Color(0xFFADD8E6)
 val PureBlack = Color(0xFF000000)

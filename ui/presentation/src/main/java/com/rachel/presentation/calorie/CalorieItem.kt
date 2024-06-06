@@ -17,6 +17,7 @@ import com.rachel.data.models.Calorie
 @Composable
 fun CalorieItem(calorie: Calorie, block: () -> Unit) {
 
+    Spacer(modifier = Modifier.height(8.dp))
     Card(
         modifier = Modifier
             .fillMaxWidth()

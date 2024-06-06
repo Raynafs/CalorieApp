@@ -37,7 +37,7 @@ class NutrientsViewModel @Inject constructor(
         _uiState.value = NutrientsUiState.Loading
         fetchJob = viewModelScope.launch {
             val calorie: Calorie = repository.getCalorie(name = id).first()
-            _uiState.value = NutrientsUiState.Loaded(nutrient = calorie)
+            _uiState.value = NutrientsUiState.Success(nutrient = calorie)
         }
     }
 

@@ -80,8 +80,8 @@ private fun NutrientsScreenContent(
                         CircularProgressIndicator()
                     }
                 }
-                is NutrientsUiState.Loaded -> {
-                    val calorie = (uiState as NutrientsUiState.Loaded).nutrient
+                is NutrientsUiState.Success -> {
+                    val calorie = (uiState as NutrientsUiState.Success).nutrient
 
                     Column(
                         modifier = Modifier
@@ -100,9 +100,11 @@ private fun NutrientsScreenContent(
                                     .joinToString(" ") { s ->
                                         s.replaceFirstChar { char -> char.uppercase() }
                                     },
-                                fontSize = MaterialTheme.typography.displaySmall.fontSize
+                                fontSize = MaterialTheme.typography.displaySmall.fontSize,
+                                color = MaterialTheme.colorScheme.onPrimary
                             )
-                            Text(text = "${calorie.servingSizeGrams}g serving")
+                            Text(text = "${calorie.servingSizeGrams}g serving",
+                                color = MaterialTheme.colorScheme.onPrimary )
                         }
 
                         Row(

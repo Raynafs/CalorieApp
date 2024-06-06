@@ -30,6 +30,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.TextUnitType
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.rachel.presentation.navigation.Screens
@@ -55,7 +56,7 @@ fun CaloriesScreenContent(
             modifier = Modifier
                 .background(
                     shape = RoundedCornerShape(
-                        bottomStart = 30.dp, bottomEnd = 30.dp
+                        bottomStart = 20.dp, bottomEnd = 20.dp
                     ), color = MaterialTheme.colorScheme.tertiary
                 )
                 .padding(vertical = 20.dp, horizontal = 16.dp)
@@ -72,15 +73,16 @@ fun CaloriesScreenContent(
                 fontSize = MaterialTheme.typography.labelSmall.fontSize,
                 color = MaterialTheme.colorScheme.onPrimary
             )
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(24.dp))
             OutlinedTextField(
                 modifier = Modifier
                     .fillMaxWidth()
+                    .height(65.dp)
                     .padding(vertical = 8.dp)
                     .clip(RoundedCornerShape(30.dp))
                     .background(MaterialTheme.colorScheme.primary),
                 singleLine = true,
-                placeholder = { Text(text = stringResource(id = R.string.search)) },
+                placeholder = { Text(text = stringResource(id = R.string.search),fontSize = 16.sp) },
                 value = query,
                 onValueChange = { viewModel.updateQuery(it) },
                 trailingIcon = {
@@ -109,14 +111,20 @@ fun CaloriesScreenContent(
 
     }, snackbarHost = {
         if (error != null) Snackbar(modifier = Modifier.padding(8.dp)) {
-            Text(text = error?.uppercase() ?: "")
-            Spacer(modifier = Modifier)
-            Button(onClick = { viewModel.hideError() }) {
-                Text(text = stringResource(id = R.string.retry))
+            Row(
+                modifier= Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween
+                ){
+                Text(text = error?.uppercase() ?: "")
+                Spacer(modifier = Modifier)
+
+                Button(onClick = { viewModel.hideError() }) {
+                    Text(text = stringResource(id = R.string.retry))
+                }
             }
         }
     }) { innerPadding ->
-        Spacer(modifier = Modifier.height(8.dp))
+
         Column(
             modifier = Modifier
                 .padding(innerPadding)
@@ -202,7 +210,7 @@ fun CaloriesScreenContent(
                                 contentDescription = "Image of Error"
                             )
 
-                            Text(text = "Empty")
+                            Text(text = stringResource(id = R.string.no_items))
 
                         }
                     }
