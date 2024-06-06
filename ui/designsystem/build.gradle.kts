@@ -6,6 +6,4 @@ plugins {
 
 android { namespace = "com.rachel.designsystem" }
 
-dependencies {
-
-}
+dependencies {}

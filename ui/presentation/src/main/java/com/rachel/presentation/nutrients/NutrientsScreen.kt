@@ -1,11 +1,46 @@
-package  com.rachel.presentation.nutrients
+/*
+ * Copyright 2021-2024 The Calorie App Systems, Inc
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.rachel.presentation.nutrients
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.*
-import androidx.compose.material3.*
+import androidx.compose.material.icons.rounded.ArrowBack
+import androidx.compose.material.icons.rounded.BreakfastDining
+import androidx.compose.material.icons.rounded.Egg
+import androidx.compose.material.icons.rounded.LocalFireDepartment
+import androidx.compose.material.icons.rounded.SetMeal
+import androidx.compose.material3.Button
+import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -21,26 +56,26 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.rachel.presentation.R
 
-
 @ExperimentalMaterial3Api
 @Composable
 private fun NutrientsScreenContent(
-    navController: NavController, viewModel: NutrientsViewModel = hiltViewModel()
+    navController: NavController,
+    viewModel: NutrientsViewModel = hiltViewModel()
 ) {
-
     val uiState by viewModel.uiState.collectAsState()
 
-    Scaffold(topBar = {
-        TopAppBar(navigationIcon = {
-            IconButton(onClick = { navController.popBackStack() }) {
-                Icon(
-                    imageVector = Icons.Rounded.ArrowBack, contentDescription = "navigate back"
-                )
-            }
-        }, title = {
-
-        })
-    }) {
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                navigationIcon = {
+                    IconButton(onClick = { navController.popBackStack() }) {
+                        Icon(imageVector = Icons.Rounded.ArrowBack, contentDescription = "navigate back")
+                    }
+                },
+                title = {}
+            )
+        }
+    ) {
         Column(modifier = Modifier.padding(it)) {
             when (uiState) {
                 NutrientsUiState.Error -> {
@@ -49,26 +84,20 @@ private fun NutrientsScreenContent(
                         verticalArrangement = Arrangement.Center,
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
-
                         val painter = painterResource(id = R.drawable.interneterror)
                         Image(
-                            modifier = Modifier
-                                .width(250.dp)
-                                .height(250.dp),
+                            modifier = Modifier.width(250.dp).height(250.dp),
                             painter = painter,
                             contentDescription = "sad child"
                         )
 
-                        Text(text = stringResource(id = R.string.ooops), fontSize = TextUnit(24f, TextUnitType.Sp))
                         Text(
-                            modifier = Modifier.padding(vertical = 16.dp),
-                            text = "Couldn't load details"
+                            text = stringResource(id = R.string.ooops),
+                            fontSize = TextUnit(24f, TextUnitType.Sp)
                         )
+                        Text(modifier = Modifier.padding(vertical = 16.dp), text = "Couldn't load details")
 
-                        Button(onClick = { viewModel.fetch() }) {
-                            Text(text = "retry")
-                        }
-
+                        Button(onClick = { viewModel.fetch() }) { Text(text = "retry") }
                     }
                 }
                 NutrientsUiState.Loading -> {
@@ -83,35 +112,29 @@ private fun NutrientsScreenContent(
                 is NutrientsUiState.Success -> {
                     val calorie = (uiState as NutrientsUiState.Success).nutrient
 
-                    Column(
-                        modifier = Modifier
-                            .padding(16.dp)
-                            .fillMaxSize(),
-                    ) {
-                        
+                    Column(modifier = Modifier.padding(16.dp).fillMaxSize()) {
                         Column(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(horizontal = 8.dp),
+                            modifier = Modifier.fillMaxWidth().padding(horizontal = 8.dp),
                             horizontalAlignment = Alignment.Start
                         ) {
                             Text(
-                                text = calorie.name.split(" ")
-                                    .joinToString(" ") { s ->
+                                text =
+                                    calorie.name.split(" ").joinToString(" ") { s ->
                                         s.replaceFirstChar { char -> char.uppercase() }
                                     },
                                 fontSize = MaterialTheme.typography.displaySmall.fontSize,
                                 color = MaterialTheme.colorScheme.onPrimary
                             )
-                            Text(text = "${calorie.servingSizeGrams}g serving",
-                                color = MaterialTheme.colorScheme.onPrimary )
+                            Text(
+                                text = "${calorie.servingSizeGrams}g serving",
+                                color = MaterialTheme.colorScheme.onPrimary
+                            )
                         }
 
                         Row(
                             modifier = Modifier.fillMaxWidth(),
                             verticalAlignment = Alignment.CenterVertically
                         ) {
-
                             NutrientDetails(
                                 modifier = Modifier.weight(1f),
                                 borderStroke = BorderStroke(0.4.dp, Color.Red),
@@ -139,14 +162,12 @@ private fun NutrientsScreenContent(
                                 title = "Carbs",
                                 value = "${calorie.carbohydratesTotalGrams}g"
                             )
-
                         }
 
                         Row(
                             modifier = Modifier.fillMaxWidth(),
                             verticalAlignment = Alignment.CenterVertically
                         ) {
-
                             NutrientDetails(
                                 modifier = Modifier.weight(1f),
                                 borderStroke = BorderStroke(0.4.dp, Color(0xFFDDE015)),
@@ -174,15 +195,12 @@ private fun NutrientsScreenContent(
                                 title = "Protein",
                                 value = "${calorie.proteinGrams}g"
                             )
-
                         }
                     }
-
                 }
             }
         }
     }
-
 }
 
 @OptIn(ExperimentalMaterial3Api::class)

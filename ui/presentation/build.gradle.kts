@@ -15,14 +15,10 @@ dependencies {
 
     implementation(project(AndroidModules.Domain.local))
 
-
     implementation(project(AndroidModules.Data.data))
 
     implementation(libs.bundles.compose)
 
-
     implementation(libs.androidx.appcompat)
     implementation(libs.compose.material3)
-
-
 }

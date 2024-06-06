@@ -1,4 +1,20 @@
-package  com.rachel.presentation.nutrients
+/*
+ * Copyright 2021-2024 The Calorie App Systems, Inc
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.rachel.presentation.nutrients
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
@@ -13,7 +29,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
-
 @Composable
 fun NutrientDetails(
     modifier: Modifier,
@@ -22,29 +37,19 @@ fun NutrientDetails(
     title: String,
     value: String
 ) {
-    Card(
-        modifier = modifier
-            .padding(8.dp),
-        border = borderStroke,
-    ) {
+    Card(modifier = modifier.padding(8.dp), border = borderStroke) {
         Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(MaterialTheme.colorScheme.surface)
-                .padding(24.dp)
+            modifier =
+                Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.surface).padding(24.dp)
         ) {
             icon()
         }
         Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(MaterialTheme.colorScheme.surface)
-                .padding(16.dp)
+            modifier =
+                Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.surface).padding(16.dp)
         ) {
             Text(text = title)
             Text(text = value)
         }
-
     }
-
 }

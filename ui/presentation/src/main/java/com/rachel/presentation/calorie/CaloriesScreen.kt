@@ -1,21 +1,33 @@
-package  com.rachel.presentation.calorie
+/*
+ * Copyright 2021-2024 The Calorie App Systems, Inc
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
+package com.rachel.presentation.calorie
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Close
 import androidx.compose.material.icons.rounded.Search
-import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -33,16 +45,15 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.rachel.presentation.navigation.Screens
 import com.rachel.presentation.R
-
+import com.rachel.presentation.navigation.Screens
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CaloriesScreenContent(
-    navController: NavController, viewModel: CaloriesViewModel = hiltViewModel()
+    navController: NavController,
+    viewModel: CaloriesViewModel = hiltViewModel()
 ) {
-
     val error by viewModel.hasError.collectAsState(initial = null)
     val isLoading by viewModel.isLoading.collectAsState(initial = false)
     val isEmpty by viewModel.isEmpty.collectAsState(initial = false)
@@ -51,85 +62,86 @@ fun CaloriesScreenContent(
     val uiState by viewModel.state.collectAsState()
     val list by viewModel.calories.collectAsState(initial = listOf())
 
-    Scaffold(topBar = {
-        Column(
-            modifier = Modifier
-                .background(
-                    shape = RoundedCornerShape(
-                        bottomStart = 20.dp, bottomEnd = 20.dp
-                    ), color = MaterialTheme.colorScheme.tertiary
-                )
-                .padding(vertical = 20.dp, horizontal = 16.dp)
-
-        ) {
-            Text(
-                text = stringResource(id = R.string.hello),
-                fontSize = MaterialTheme.typography.titleLarge.fontSize,
-                color = MaterialTheme.colorScheme.onPrimary)
-
-            Spacer(modifier = Modifier.height(16.dp))
-            Text(
-                text = stringResource(id = R.string.find_food),
-                fontSize = MaterialTheme.typography.labelSmall.fontSize,
-                color = MaterialTheme.colorScheme.onPrimary
-            )
-            Spacer(modifier = Modifier.height(24.dp))
-            OutlinedTextField(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(65.dp)
-                    .padding(vertical = 8.dp)
-                    .clip(RoundedCornerShape(30.dp))
-                    .background(MaterialTheme.colorScheme.primary),
-                singleLine = true,
-                placeholder = { Text(text = stringResource(id = R.string.search),fontSize = 16.sp) },
-                value = query,
-                onValueChange = { viewModel.updateQuery(it) },
-                trailingIcon = {
-                    IconButton(enabled = query.isNotBlank() or (uiState !is CaloriesUiState.Loading),
-                        onClick = { viewModel.search() }) {
-                        Icon(
-                            imageVector = Icons.Rounded.Search,
-                            contentDescription = "search food"
+    Scaffold(
+        topBar = {
+            Column(
+                modifier =
+                    Modifier.background(
+                            shape = RoundedCornerShape(bottomStart = 20.dp, bottomEnd = 20.dp),
+                            color = MaterialTheme.colorScheme.tertiary
                         )
-                    }
-                },
-                shape = RoundedCornerShape(30.dp),
-                colors = TextFieldDefaults.colors(
-                    disabledTextColor = Color.Transparent,
-                    focusedContainerColor = MaterialTheme.colorScheme.secondaryContainer,
-                    unfocusedContainerColor = MaterialTheme.colorScheme.secondaryContainer,
-                    disabledContainerColor = MaterialTheme.colorScheme.secondaryContainer,
-                    cursorColor = MaterialTheme.colorScheme.onPrimary,
-                    focusedIndicatorColor = Color.Transparent,
-                    unfocusedIndicatorColor = Color.Transparent,
-                    disabledIndicatorColor = Color.Transparent,
+                        .padding(vertical = 20.dp, horizontal = 16.dp)
+            ) {
+                Text(
+                    text = stringResource(id = R.string.hello),
+                    fontSize = MaterialTheme.typography.titleLarge.fontSize,
+                    color = MaterialTheme.colorScheme.onPrimary
                 )
-            )
 
-        }
+                Spacer(modifier = Modifier.height(16.dp))
+                Text(
+                    text = stringResource(id = R.string.find_food),
+                    fontSize = MaterialTheme.typography.labelSmall.fontSize,
+                    color = MaterialTheme.colorScheme.onPrimary
+                )
+                Spacer(modifier = Modifier.height(24.dp))
+                OutlinedTextField(
+                    modifier =
+                        Modifier.fillMaxWidth()
+                            .height(65.dp)
+                            .padding(vertical = 8.dp)
+                            .clip(RoundedCornerShape(30.dp))
+                            .background(MaterialTheme.colorScheme.primary),
+                    singleLine = true,
+                    placeholder = { Text(text = stringResource(id = R.string.search), fontSize = 16.sp) },
+                    value = query,
+                    onValueChange = { viewModel.updateQuery(it) },
+                    trailingIcon = {
+                        IconButton(
+                            enabled = query.isNotBlank() or (uiState !is CaloriesUiState.Loading),
+                            onClick = { viewModel.search() }
+                        ) {
+                            Icon(imageVector = Icons.Rounded.Search, contentDescription = "search food")
+                        }
+                    },
+                    shape = RoundedCornerShape(30.dp),
+                    colors =
+                        TextFieldDefaults.colors(
+                            disabledTextColor = Color.Transparent,
+                            focusedContainerColor = MaterialTheme.colorScheme.secondaryContainer,
+                            unfocusedContainerColor = MaterialTheme.colorScheme.secondaryContainer,
+                            disabledContainerColor = MaterialTheme.colorScheme.secondaryContainer,
+                            cursorColor = MaterialTheme.colorScheme.onPrimary,
+                            focusedIndicatorColor = Color.Transparent,
+                            unfocusedIndicatorColor = Color.Transparent,
+                            disabledIndicatorColor = Color.Transparent
+                        )
+                )
+            }
+        },
+        snackbarHost = {
+            if (error != null) {
+                Snackbar(modifier = Modifier.padding(8.dp)) {
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        Text(text = error?.uppercase() ?: "")
+                        Spacer(modifier = Modifier)
 
-    }, snackbarHost = {
-        if (error != null) Snackbar(modifier = Modifier.padding(8.dp)) {
-            Row(
-                modifier= Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween
-                ){
-                Text(text = error?.uppercase() ?: "")
-                Spacer(modifier = Modifier)
-
-                Button(onClick = { viewModel.hideError() }) {
-                    Text(text = stringResource(id = R.string.retry))
+                        Button(onClick = { viewModel.hideError() }) {
+                            Text(text = stringResource(id = R.string.retry))
+                        }
+                    }
                 }
             }
         }
-    }) { innerPadding ->
-
+    ) { innerPadding ->
         Column(
-            modifier = Modifier
-                .padding(innerPadding)
-                .fillMaxSize()
-                .background(MaterialTheme.colorScheme.onSecondary)
+            modifier =
+                Modifier.padding(innerPadding)
+                    .fillMaxSize()
+                    .background(MaterialTheme.colorScheme.onSecondary)
         ) {
             AnimatedVisibility(
                 visible = isLoading,
@@ -144,10 +156,8 @@ fun CaloriesScreenContent(
                 exit = slideOutVertically()
             ) {
                 Row(
-                    modifier = Modifier
-                        .background(MaterialTheme.colorScheme.primary)
-                        .fillMaxWidth()
-                        .padding(16.dp)
+                    modifier =
+                        Modifier.background(MaterialTheme.colorScheme.primary).fillMaxWidth().padding(16.dp)
                 ) {
                     Text(
                         modifier = Modifier.weight(1f),
@@ -168,30 +178,26 @@ fun CaloriesScreenContent(
                     is CaloriesUiState.Error -> {
                         Column(
                             modifier = Modifier.fillMaxSize(),
-
                             verticalArrangement = Arrangement.Center,
                             horizontalAlignment = Alignment.CenterHorizontally
                         ) {
-
                             val painter = painterResource(id = R.drawable.interneterror)
                             Image(
-                                modifier = Modifier
-                                    .width(250.dp)
-                                    .height(250.dp),
+                                modifier = Modifier.width(250.dp).height(250.dp),
                                 painter = painter,
                                 contentDescription = "sad child"
                             )
 
-                            Text(text = stringResource(id = R.string.ooops), fontSize = TextUnit(24f, TextUnitType.Sp))
+                            Text(
+                                text = stringResource(id = R.string.ooops),
+                                fontSize = TextUnit(24f, TextUnitType.Sp)
+                            )
                             Text(
                                 modifier = Modifier.padding(vertical = 16.dp),
                                 text = (uiState as CaloriesUiState.Error).message
                             )
 
-                            Button(onClick = { viewModel.search() }) {
-                                Text(text = "retry")
-                            }
-
+                            Button(onClick = { viewModel.search() }) { Text(text = "retry") }
                         }
                     }
                     CaloriesUiState.Empty -> {
@@ -200,18 +206,14 @@ fun CaloriesScreenContent(
                             verticalArrangement = Arrangement.Center,
                             horizontalAlignment = Alignment.CenterHorizontally
                         ) {
-
                             val painter = painterResource(id = R.drawable.search)
                             Image(
-                                modifier = Modifier
-                                    .width(250.dp)
-                                    .height(250.dp),
+                                modifier = Modifier.width(250.dp).height(250.dp),
                                 painter = painter,
                                 contentDescription = "Image of Error"
                             )
 
                             Text(text = stringResource(id = R.string.no_items))
-
                         }
                     }
                     CaloriesUiState.Loading -> {
@@ -232,13 +234,11 @@ fun CaloriesScreenContent(
                             }
                         }
                     }
-
                     else -> {}
                 }
             }
         }
     }
-
 }
 
 @Composable
