@@ -39,23 +39,19 @@ Below is a picture describing the modularisation technique
 
 ## Illustration
 
-With internet
 
+With internet
 
 https://github.com/Raynafs/CalorieApp/assets/110402503/eb349676-f383-4f54-8c82-5de9b5cff91f
 
 
 
-With No internet and no items found
 
+
+With No internet and no items found
 
 https://github.com/Raynafs/CalorieApp/assets/110402503/4dade1ca-c39e-445a-8309-cd483e36c414
 
 
-
-
-
-
-https://github.com/Raynafs/CalorieApp/assets/110402503/dc06509f-1926-4c26-89a9-69e3c9dc12b2
 
 
