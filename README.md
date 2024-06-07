@@ -19,13 +19,14 @@ The proposed architecture consists of 3 main modules;
 ### Data
 1. Network Calls
 2. Caching
-3. The repository implementation
-4. The relevant data models
-5. Relevant Mappers
+3. The relevant data models
+
 
 ### Domain
 1. The repository
-2. The relevant domain models.
+2. Repository implementation
+3. The relevant domain models.
+4. Relevant Mappers
 
 ### Ui
 1. View
