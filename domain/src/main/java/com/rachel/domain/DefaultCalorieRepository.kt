@@ -29,6 +29,11 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.mapNotNull
 import kotlinx.coroutines.withContext
 
+/**
+ * It encapsulates the logic for fetching and managing calorie data,
+ * providing an abstraction over the underlying data sources (local database and remote API)
+ * for the domain layer to interact with.
+ * */
 class DefaultCalorieRepository(val dao: CalorieDao, val api: CalorieApi) : CalorieRepository {
 
     private val dispatcher = Dispatchers.IO

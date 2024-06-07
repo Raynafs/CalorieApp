@@ -56,6 +56,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -67,6 +68,13 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.rachel.presentation.R
 import com.rachel.presentation.navigation.Screens
+
+/**
+ * This is the screen the first screen the user interacts with.
+ * It welcomes the user and enables them to search for the food they would like
+ * then gives an output of the name of the food and a few of nutrients.
+ * */
+
 
 @Composable
 fun CaloriesScreenContent(
@@ -249,7 +257,7 @@ fun CaloriesScreenContent(
                     CaloriesUiState.Success -> {
                         LazyColumn {
                             items(items = list) {
-                                CalorieItem(calorie = it) {
+                                CalorieItem(calorie = it, modifier = Modifier.testTag("CaloriesList")) {
                                     navController.navigate(Screens.Nutrients.route.plus("/${it.name}"))
                                 }
                             }
