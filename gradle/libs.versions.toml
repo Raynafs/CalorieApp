@@ -23,9 +23,7 @@ androidx-compose-material = "1.6.6"
 androidx-core-ktx = "1.10.1"
 androidx-test-ext-junit = "1.1.5"
 androidx-test-espresso = "3.5.1"
-androidx-work-manager = "2.8.1"
-androidx-room = "2.5.2"
-androidx-datastore = "1.0.0"
+androidx-room = "2.6.1"
 androidx-hilt = "2.45"
 androidx-navigation = "2.6.0"
 androidx-navigation-hilt = "1.0.0"
@@ -34,17 +32,14 @@ androidx-lifecycle-runtime-ktx = "2.6.1"
 androidx-constraintlayout-constraintlayout = "2.2.0-alpha13"
 
 # google libraries
-firebase_bom = "32.2.2"
 ksp = "1.8.10-1.0.9"
-google_play_services = "19.2.0"
-stepper = "1.0.0-beta01"
+
 
 
 #testing
 testing-junit = "4.13.2"
 
 # other libraries
-coil = "2.2.2"
 timber = "5.0.1"
 appcompat = "1.6.1"
 material = "1.9.0"
@@ -53,14 +48,10 @@ okhttp = "4.11.0"
 accompanist = "0.28.0"
 compose-cpp = "2.2.8"
 
-
 spotlessPluginGradle = "6.25.0"
 
-# calls
-pushy = "1.0.94"
-twilio = "5.7.2"
-
 ktlint = "11.5.1"
+navigationTesting = "2.7.7"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "testing-junit" }
@@ -83,16 +74,11 @@ androidx-hilt = { group = "com.google.dagger", name = "hilt-android", version.re
 androidx-hilt-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "androidx-hilt" }
 androidx-hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "androidx-hilt" }
 # androidx-room
-androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "androidx-room" }
-androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "androidx-room" }
-androidx-room-extensions = { group = "androidx.room", name = "room-ktx", version.ref = "androidx-room" }
-androidx-room-testing = { group = "androidx.room", name = "room-testing", version.ref = "androidx-room" }
-# androidx-work-manager
-androidx-work-runtime = { group = "androidx.work", name = "work-runtime-ktx", version.ref = "androidx-work-manager" }
-androidx-work-testing = { group = "androidx.work", name = "work-testing", version.ref = "androidx-work-manager" }
-# androidx-datastore
-androidx-datastore-preference = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "androidx-datastore" }
-androidx-datastore-proto = { group = "androidx.datastore", name = "datastore", version.ref = "androidx-datastore" }
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "androidx-room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "androidx-room" }
+room-extensions = { group = "androidx.room", name = "room-ktx", version.ref = "androidx-room" }
+room-testing = { group = "androidx.room", name = "room-testing", version.ref = "androidx-room" }
+
 # androidx-compose-navigation
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "androidx-navigation" }
 androidx-navigation-testing = { group = "androidx.navigation", name = "navigation-testing", version.ref = "androidx-navigation" }
@@ -130,25 +116,7 @@ ktor-logging = { group = "io.ktor", name = "ktor-client-logging", version.ref = 
 ktor-serialization-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
 ktor-content-negotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktor" }
 ktor-okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
-# firebase
-firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase_bom" }
-firebase-messaging = { module = "com.google.firebase:firebase-messaging-ktx" }
-firebase-crashlytics = { module = "com.google.firebase:firebase-crashlytics-ktx" }
-firebase-analytics = { module = "com.google.firebase:firebase-analytics-ktx" }
-firebase-config = { module = "com.google.firebase:firebase-config-ktx" }
-firebase-performance = { module = "com.google.firebase:firebase-perf-ktx" }
-firebase-inappmessagging = { module = "com.google.firebase:firebase-inappmessaging-display-ktx" }
-firebase-dynamic-links = { module = "com.google.firebase:firebase-dynamic-links-ktx" }
 
-google_play_services = { group = "com.google.android.gms", name = "play-services-auth", version.ref = "google_play_services" }
-
-stepper = { group = "com.github.maryamrzdh", name = "compose-stepper", version.ref = "stepper" }
-
-
-# coil
-coil-kt = { group = "io.coil-kt", name = "coil", version.ref = "coil" }
-coil-kt-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
-coil-kt-svg = { group = "io.coil-kt", name = "coil-svg", version.ref = "coil" }
 
 # gradle plugins
 android-gradle-plugin = { group = "com.android.tools.build", name = "gradle", version.ref = "gradle-plugin-android" }
@@ -157,10 +125,7 @@ ksp-gradle-plugin = { group = "com.google.devtools.ksp", name = "com.google.devt
 
 # others
 timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
-material = { group = "com.google.android.material", name = "material", version.ref = "com-google-android-material-material" }
-accompanist = { group = "com.google.accompanist", name = "accompanist-pager", version.ref = "accompanist" }
-accompanist-indicators = { group = "com.google.accompanist", name = "accompanist-pager-indicators", version.ref = "accompanist" }
-compose-cpp-emoji = {module = "com.github.jump-sdk:jetpack_compose_country_code_picker_emoji", version.ref = "compose-cpp"}
+navigation-testing = { group = "androidx.navigation", name = "navigation-testing", version.ref = "navigationTesting" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "gradle-plugin-android" }
@@ -185,11 +150,7 @@ compose = [
     "compose-lifecycle-livedata-ktx", "compose-lifecycle-runtime", "compose-lifecycle-viewModel",
     "androidx-navigation-compose"
 ]
-firebase = [
-    "firebase-messaging", "firebase-crashlytics", "firebase-analytics",
-    "firebase-performance", "firebase-config", "firebase-dynamic-links",
-    "firebase-inappmessagging",
-]
+
 ktor = [
     "ktor-client-core", "ktor-client-okhttp", "ktor-logging", "ktor-content-negotiation",
     "ktor-serialization-json", "ktor-okhttp-logging"

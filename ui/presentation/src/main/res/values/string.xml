@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello ☺️,</string>
+    <string name="find_food">Let\'s help you find the nutritional info for your food</string>
+    <string name="helps">Hope this helps</string>
+    <string name="search">Search for food</string>
+    <string name="retry">retry</string>
+    <string name="ooops">Oops,something went wrong</string>
+    <string name="internet">No Internet Connection</string>
+    <string name="no_items">No Items Found</string>
+</resources>
