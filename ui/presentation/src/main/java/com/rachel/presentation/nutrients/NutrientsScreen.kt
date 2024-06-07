@@ -18,6 +18,7 @@ package com.rachel.presentation.nutrients
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -26,9 +27,14 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.ArrowBack
+import androidx.compose.material.icons.rounded.BakeryDining
+import androidx.compose.material.icons.rounded.Blender
 import androidx.compose.material.icons.rounded.BreakfastDining
+import androidx.compose.material.icons.rounded.Coffee
+import androidx.compose.material.icons.rounded.Cookie
 import androidx.compose.material.icons.rounded.Egg
 import androidx.compose.material.icons.rounded.LocalFireDepartment
 import androidx.compose.material.icons.rounded.SetMeal
@@ -123,11 +129,11 @@ private fun NutrientsScreenContent(
                                         s.replaceFirstChar { char -> char.uppercase() }
                                     },
                                 fontSize = MaterialTheme.typography.displaySmall.fontSize,
-                                color = MaterialTheme.colorScheme.onPrimary
+                                color = Color.Black
                             )
                             Text(
                                 text = "${calorie.servingSizeGrams}g serving",
-                                color = MaterialTheme.colorScheme.onPrimary
+                                color = Color.Black
                             )
                         }
 
@@ -136,13 +142,14 @@ private fun NutrientsScreenContent(
                             verticalAlignment = Alignment.CenterVertically
                         ) {
                             NutrientDetails(
-                                modifier = Modifier.weight(1f),
-                                borderStroke = BorderStroke(0.4.dp, Color.Red),
+                                modifier = Modifier.weight(1f)
+                                    .background(MaterialTheme.colorScheme.onBackground, RoundedCornerShape(10.dp)),
+                                borderStroke = BorderStroke(0.4.dp, Color.Black),
                                 icon = {
                                     Icon(
-                                        imageVector = Icons.Rounded.LocalFireDepartment,
+
+                                        imageVector = Icons.Rounded.BakeryDining,
                                         contentDescription = "",
-                                        tint = Color.Red
                                     )
                                 },
                                 title = "Calories",
@@ -150,17 +157,17 @@ private fun NutrientsScreenContent(
                             )
 
                             NutrientDetails(
-                                modifier = Modifier.weight(1f),
-                                borderStroke = BorderStroke(0.4.dp, Color.Blue),
+                                modifier = Modifier.weight(1f)
+                                    .background(MaterialTheme.colorScheme.onPrimaryContainer,RoundedCornerShape(10.dp)),
+                                borderStroke = BorderStroke(0.4.dp, Color.Black),
                                 icon = {
                                     Icon(
-                                        imageVector = Icons.Rounded.BreakfastDining,
+                                        imageVector = Icons.Rounded.Blender,
                                         contentDescription = "",
-                                        tint = Color.Blue
                                     )
                                 },
-                                title = "Carbs",
-                                value = "${calorie.carbohydratesTotalGrams}g"
+                                title = "Cholesterol",
+                                value = "${calorie.cholesterolMilligrams}mg"
                             )
                         }
 
@@ -169,13 +176,15 @@ private fun NutrientsScreenContent(
                             verticalAlignment = Alignment.CenterVertically
                         ) {
                             NutrientDetails(
-                                modifier = Modifier.weight(1f),
-                                borderStroke = BorderStroke(0.4.dp, Color(0xFFDDE015)),
+                                modifier = Modifier.weight(1f)
+                                    .background(MaterialTheme.colorScheme.onPrimary,
+                                        RoundedCornerShape(10.dp)
+                                    ),
+                                borderStroke = BorderStroke(0.4.dp, Color.Black),
                                 icon = {
                                     Icon(
-                                        imageVector = Icons.Rounded.SetMeal,
+                                        imageVector = Icons.Rounded.Coffee,
                                         contentDescription = "",
-                                        tint = Color(0xFFDDE015)
                                     )
                                 },
                                 title = "Fat",
@@ -183,17 +192,53 @@ private fun NutrientsScreenContent(
                             )
 
                             NutrientDetails(
-                                modifier = Modifier.weight(1f),
-                                borderStroke = BorderStroke(0.4.dp, Color(0xFF3DDC97)),
+                                modifier = Modifier.weight(1f)
+                                    .background(MaterialTheme.colorScheme.onTertiary,
+                                        RoundedCornerShape(10.dp)),
+
+                                borderStroke = BorderStroke(0.4.dp, Color.Black),
                                 icon = {
                                     Icon(
-                                        imageVector = Icons.Rounded.Egg,
+                                        imageVector = Icons.Rounded.Cookie,
                                         contentDescription = "",
-                                        tint = Color(0xFF3DDC97)
+                                    )
+                                },
+                                title = "Sugar",
+                                value = "${calorie.sugarGrams}g"
+                            )
+                        }
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            verticalAlignment = Alignment.CenterVertically
+                        ){
+                            NutrientDetails(
+                                modifier = Modifier.weight(1f)
+                                    .background(MaterialTheme.colorScheme.onTertiaryContainer,RoundedCornerShape(10.dp)),
+
+                                borderStroke = BorderStroke(0.4.dp, Color.Black),
+                                icon = {
+                                    Icon(
+                                        imageVector = Icons.Rounded.BreakfastDining,
+                                        contentDescription = "",
                                     )
                                 },
                                 title = "Protein",
                                 value = "${calorie.proteinGrams}g"
+                            )
+
+                            NutrientDetails(
+                                modifier = Modifier.weight(1f)
+                                    .background(MaterialTheme.colorScheme.secondary,RoundedCornerShape(10.dp)),
+
+                                borderStroke = BorderStroke(0.4.dp, Color.Black),
+                                icon = {
+                                    Icon(
+                                        imageVector = Icons.Rounded.SetMeal,
+                                        contentDescription = "",
+                                    )
+                                },
+                                title = "Carbohydrates",
+                                value = "${calorie. carbohydratesTotalGrams}g"
                             )
                         }
                     }

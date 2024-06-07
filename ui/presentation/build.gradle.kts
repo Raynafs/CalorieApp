@@ -21,4 +21,6 @@ dependencies {
 
     implementation(libs.androidx.appcompat)
     implementation(libs.compose.material3)
+    implementation(libs.navigation.testing)
+    testImplementation("junit:junit:4.12")
 }

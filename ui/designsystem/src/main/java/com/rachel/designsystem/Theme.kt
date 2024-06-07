@@ -32,7 +32,7 @@ import androidx.core.view.WindowCompat
 private val LightColorScheme =
     lightColorScheme(
         primary = TryBlue,
-        onPrimary = PureBlack,
+        onPrimary = LightPink,
         secondary = TryPurple,
         onSecondary = PureWhite,
         tertiary = TryBlue,
@@ -41,7 +41,6 @@ private val LightColorScheme =
 
         onBackground = Peach,
         onPrimaryContainer = PurpleHeaven ,
-        onSurface = LightPink,
         onTertiary =  LightGreen,
         onTertiaryContainer = UniqueBlue
 

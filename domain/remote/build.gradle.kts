@@ -13,5 +13,7 @@ dependencies {
     implementation(libs.androidx.datastore.proto)
 
     implementation(libs.kotlinx.coroutines)
-
+    testImplementation("junit:junit:4.12")
+    testImplementation("junit:junit:4.12")
+    testImplementation("junit:junit:4.12")
 }

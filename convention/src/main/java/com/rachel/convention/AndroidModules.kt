@@ -15,4 +15,12 @@ object AndroidModules {
         const val local = ":domain:local"
         }
 
+    object Datar {
+        const val remote = ":data:remote"
+        const val local = ":data:local"
+    }
+    object Damain {
+        const val domain = ":domain"
+    }
+
 }

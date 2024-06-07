@@ -94,14 +94,14 @@ fun CaloriesScreenContent(
                 Text(
                     text = stringResource(id = R.string.hello),
                     fontSize = MaterialTheme.typography.titleLarge.fontSize,
-                    color = MaterialTheme.colorScheme.onPrimary
+                    color = Color.Black
                 )
 
                 Spacer(modifier = Modifier.height(16.dp))
                 Text(
                     text = stringResource(id = R.string.find_food),
                     fontSize = MaterialTheme.typography.labelSmall.fontSize,
-                    color = MaterialTheme.colorScheme.onPrimary
+                    color = Color.Black
                 )
                 Spacer(modifier = Modifier.height(24.dp))
                 OutlinedTextField(
@@ -130,7 +130,7 @@ fun CaloriesScreenContent(
                             focusedContainerColor = MaterialTheme.colorScheme.secondaryContainer,
                             unfocusedContainerColor = MaterialTheme.colorScheme.secondaryContainer,
                             disabledContainerColor = MaterialTheme.colorScheme.secondaryContainer,
-                            cursorColor = MaterialTheme.colorScheme.onPrimary,
+                            cursorColor = Color.Black,
                             focusedIndicatorColor = Color.Transparent,
                             unfocusedIndicatorColor = Color.Transparent,
                             disabledIndicatorColor = Color.Transparent
@@ -181,13 +181,13 @@ fun CaloriesScreenContent(
                     Text(
                         modifier = Modifier.weight(1f),
                         text = "No items found for $query",
-                        color = MaterialTheme.colorScheme.onPrimary
+                        color = Color.Black
                     )
                     Icon(
                         modifier = Modifier.clickable { viewModel.hideEmpty() },
                         imageVector = Icons.Rounded.Close,
                         contentDescription = "remove empty error",
-                        tint = MaterialTheme.colorScheme.onPrimary
+                        tint = Color.Black
                     )
                 }
             }

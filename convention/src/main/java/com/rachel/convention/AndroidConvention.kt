@@ -7,7 +7,6 @@ object AndroidConvention {
 
     // child
     val module = "calorie.convention.module"
-    val feature = "calorie.convention.feature"
 
     object Compose {
         const val application = "calorie.convention.compose.application"
