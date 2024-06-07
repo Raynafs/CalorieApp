@@ -22,6 +22,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -136,14 +137,15 @@ private fun NutrientsScreenContent(
                                 color = Color.Black
                             )
                         }
-
+                        Spacer(Modifier.height(8.dp))
                         Row(
                             modifier = Modifier.fillMaxWidth(),
-                            verticalAlignment = Alignment.CenterVertically
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.SpaceEvenly
                         ) {
                             NutrientDetails(
-                                modifier = Modifier.weight(1f)
-                                    .background(MaterialTheme.colorScheme.onBackground, RoundedCornerShape(10.dp)),
+                                modifier = Modifier
+                                    .background(MaterialTheme.colorScheme.onBackground, RoundedCornerShape(16.dp)),
                                 borderStroke = BorderStroke(0.4.dp, Color.Black),
                                 icon = {
                                     Icon(
@@ -157,8 +159,8 @@ private fun NutrientsScreenContent(
                             )
 
                             NutrientDetails(
-                                modifier = Modifier.weight(1f)
-                                    .background(MaterialTheme.colorScheme.onPrimaryContainer,RoundedCornerShape(10.dp)),
+                                modifier = Modifier
+                                    .background(MaterialTheme.colorScheme.onPrimaryContainer,RoundedCornerShape(16.dp)),
                                 borderStroke = BorderStroke(0.4.dp, Color.Black),
                                 icon = {
                                     Icon(
@@ -170,15 +172,16 @@ private fun NutrientsScreenContent(
                                 value = "${calorie.cholesterolMilligrams}mg"
                             )
                         }
-
+                        Spacer(Modifier.height(8.dp))
                         Row(
                             modifier = Modifier.fillMaxWidth(),
-                            verticalAlignment = Alignment.CenterVertically
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.SpaceEvenly
                         ) {
                             NutrientDetails(
-                                modifier = Modifier.weight(1f)
+                                modifier = Modifier
                                     .background(MaterialTheme.colorScheme.onPrimary,
-                                        RoundedCornerShape(10.dp)
+                                        RoundedCornerShape(16.dp)
                                     ),
                                 borderStroke = BorderStroke(0.4.dp, Color.Black),
                                 icon = {
@@ -192,9 +195,9 @@ private fun NutrientsScreenContent(
                             )
 
                             NutrientDetails(
-                                modifier = Modifier.weight(1f)
+                                modifier = Modifier
                                     .background(MaterialTheme.colorScheme.onTertiary,
-                                        RoundedCornerShape(10.dp)),
+                                        RoundedCornerShape(16.dp)),
 
                                 borderStroke = BorderStroke(0.4.dp, Color.Black),
                                 icon = {
@@ -207,13 +210,15 @@ private fun NutrientsScreenContent(
                                 value = "${calorie.sugarGrams}g"
                             )
                         }
+                        Spacer(Modifier.height(8.dp))
                         Row(
                             modifier = Modifier.fillMaxWidth(),
-                            verticalAlignment = Alignment.CenterVertically
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.SpaceEvenly
                         ){
                             NutrientDetails(
-                                modifier = Modifier.weight(1f)
-                                    .background(MaterialTheme.colorScheme.onTertiaryContainer,RoundedCornerShape(10.dp)),
+                                modifier = Modifier
+                                    .background(MaterialTheme.colorScheme.onTertiaryContainer,RoundedCornerShape(16.dp)),
 
                                 borderStroke = BorderStroke(0.4.dp, Color.Black),
                                 icon = {
@@ -227,8 +232,8 @@ private fun NutrientsScreenContent(
                             )
 
                             NutrientDetails(
-                                modifier = Modifier.weight(1f)
-                                    .background(MaterialTheme.colorScheme.secondary,RoundedCornerShape(10.dp)),
+                                modifier = Modifier
+                                    .background(MaterialTheme.colorScheme.secondary,RoundedCornerShape(16.dp)),
 
                                 borderStroke = BorderStroke(0.4.dp, Color.Black),
                                 icon = {

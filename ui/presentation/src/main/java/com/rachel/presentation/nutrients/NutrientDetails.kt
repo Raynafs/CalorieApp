@@ -21,7 +21,9 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -37,7 +39,7 @@ fun NutrientDetails(
     title: String,
     value: String
 ) {
-    Card(modifier = modifier.padding(8.dp), border = borderStroke) {
+    Card(modifier = modifier.width(150.dp).padding(4.dp), border = borderStroke) {
         Row(
             modifier =
                 Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.surface).padding(24.dp)
