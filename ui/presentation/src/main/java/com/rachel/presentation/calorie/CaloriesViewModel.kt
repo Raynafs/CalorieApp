@@ -18,9 +18,10 @@ package com.rachel.presentation.calorie
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.rachel.data.CalorieRepository
-import com.rachel.data.models.Calorie
-import com.rachel.data.models.Resource
+import com.rachel.domain.CalorieRepository
+import com.rachel.domain.models.Calorie
+import com.rachel.domain.models.Resource
+
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.ExperimentalCoroutinesApi

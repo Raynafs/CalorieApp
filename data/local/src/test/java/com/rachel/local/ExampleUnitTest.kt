@@ -1,4 +1,4 @@
-package com.rachel.domain
+package com.rachel.local
 
 import org.junit.Test
 

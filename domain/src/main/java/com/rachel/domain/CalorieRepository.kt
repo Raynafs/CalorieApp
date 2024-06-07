@@ -14,13 +14,17 @@
  * limitations under the License.
  */
 
-package com.rachel.presentation.nutrients
+package com.rachel.domain
+
 import com.rachel.domain.models.Calorie
+import com.rachel.domain.models.Resource
+import kotlinx.coroutines.flow.Flow
 
-sealed class NutrientsUiState {
-    object Loading : NutrientsUiState()
+interface CalorieRepository {
 
-    object Error : NutrientsUiState()
+    fun getCalories(): Flow<List<Calorie>>
 
-    data class Success(val nutrient: Calorie) : NutrientsUiState()
+    fun getCalorie(name: String): Flow<Calorie>
+
+    suspend fun searchCalories(query: String): Resource
 }

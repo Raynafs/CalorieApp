@@ -33,7 +33,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.rachel.data.models.Calorie
+import com.rachel.domain.models.Calorie
+
 
 @Composable
 fun CalorieItem(calorie: Calorie, block: () -> Unit) {

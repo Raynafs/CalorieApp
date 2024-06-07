@@ -1,4 +1,4 @@
-package com.rachel.domain
+package com.rachel.remote
 
 import org.junit.Test
 

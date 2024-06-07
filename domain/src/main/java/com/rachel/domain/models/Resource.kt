@@ -14,13 +14,9 @@
  * limitations under the License.
  */
 
-package com.rachel.presentation.nutrients
-import com.rachel.domain.models.Calorie
+package com.rachel.domain.models
+sealed class Resource {
+    data class Error(val message: String) : Resource()
 
-sealed class NutrientsUiState {
-    object Loading : NutrientsUiState()
-
-    object Error : NutrientsUiState()
-
-    data class Success(val nutrient: Calorie) : NutrientsUiState()
+    data class Success(val isEmpty: Boolean) : Resource()
 }

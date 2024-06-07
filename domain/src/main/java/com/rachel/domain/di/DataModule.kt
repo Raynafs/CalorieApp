@@ -14,13 +14,24 @@
  * limitations under the License.
  */
 
-package com.rachel.presentation.nutrients
-import com.rachel.domain.models.Calorie
+package com.rachel.domain.di
 
-sealed class NutrientsUiState {
-    object Loading : NutrientsUiState()
 
-    object Error : NutrientsUiState()
+import com.rachel.domain.CalorieRepository
+import com.rachel.domain.DefaultCalorieRepository
+import com.rachel.local.dao.CalorieDao
+import com.rachel.remote.CalorieApi
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
 
-    data class Success(val nutrient: Calorie) : NutrientsUiState()
+@Module
+@InstallIn(SingletonComponent::class)
+object DataModule {
+    @Provides
+    @Singleton
+    fun providesDefaultRepository(dao: CalorieDao, api: CalorieApi): CalorieRepository =
+        DefaultCalorieRepository(dao, api)
 }

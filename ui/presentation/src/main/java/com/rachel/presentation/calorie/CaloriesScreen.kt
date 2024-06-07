@@ -209,11 +209,13 @@ fun CaloriesScreenContent(
 
                             Text(
                                 text = stringResource(id = R.string.ooops),
-                                fontSize = TextUnit(24f, TextUnitType.Sp)
+                                fontSize = TextUnit(24f, TextUnitType.Sp),
+                                color = Color.Black
                             )
                             Text(
                                 modifier = Modifier.padding(vertical = 16.dp),
-                                text = (uiState as CaloriesUiState.Error).message
+                                text = (uiState as CaloriesUiState.Error).message,
+                                color = Color.Black
                             )
 
                             Button(onClick = { viewModel.search() }) { Text(text = "retry") }
@@ -232,7 +234,7 @@ fun CaloriesScreenContent(
                                 contentDescription = "Image of Error"
                             )
 
-                            Text(text = stringResource(id = R.string.no_items))
+                            Text(text = stringResource(id = R.string.no_items), color = Color.Black)
                         }
                     }
                     CaloriesUiState.Loading -> {

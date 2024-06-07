@@ -7,19 +7,10 @@ object AndroidModules {
     }
 
     object Data {
-        const val data = ":data"
-    }
-
-    object Domain {
-        const val remote = ":domain:remote"
-        const val local = ":domain:local"
-        }
-
-    object Datar {
         const val remote = ":data:remote"
         const val local = ":data:local"
     }
-    object Damain {
+    object Domain {
         const val domain = ":domain"
     }
 

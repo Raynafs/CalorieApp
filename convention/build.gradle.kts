@@ -47,9 +47,5 @@ gradlePlugin {
             id = "calorie.convention.module"
             implementationClass = "ModuleConventionPlugin"
         }
-        register("feature-convention") {
-            id = "calorie.convention.feature"
-            implementationClass = "FeatureConventionPlugin"
-        }
     }
 }

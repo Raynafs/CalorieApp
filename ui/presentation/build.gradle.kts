@@ -11,11 +11,14 @@ dependencies {
     // design modules
     implementation(project(AndroidModules.Ui.designsystem))
 
-    implementation(project(AndroidModules.Domain.remote))
+    implementation(project(AndroidModules.Data.remote))
 
-    implementation(project(AndroidModules.Domain.local))
+    implementation(project(AndroidModules.Data.local))
 
-    implementation(project(AndroidModules.Data.data))
+    implementation(project(AndroidModules.Domain.domain))
+
+
+
 
     implementation(libs.bundles.compose)
 
