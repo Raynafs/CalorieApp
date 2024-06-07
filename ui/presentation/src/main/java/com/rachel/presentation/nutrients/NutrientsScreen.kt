@@ -137,7 +137,7 @@ private fun NutrientsScreenContent(
                                 color = Color.Black
                             )
                         }
-                        Spacer(Modifier.height(8.dp))
+                        Spacer(Modifier.height(20.dp))
                         Row(
                             modifier = Modifier.fillMaxWidth(),
                             verticalAlignment = Alignment.CenterVertically,
@@ -172,7 +172,7 @@ private fun NutrientsScreenContent(
                                 value = "${calorie.cholesterolMilligrams}mg"
                             )
                         }
-                        Spacer(Modifier.height(8.dp))
+                        Spacer(Modifier.height(12.dp))
                         Row(
                             modifier = Modifier.fillMaxWidth(),
                             verticalAlignment = Alignment.CenterVertically,
@@ -210,7 +210,7 @@ private fun NutrientsScreenContent(
                                 value = "${calorie.sugarGrams}g"
                             )
                         }
-                        Spacer(Modifier.height(8.dp))
+                        Spacer(Modifier.height(12.dp))
                         Row(
                             modifier = Modifier.fillMaxWidth(),
                             verticalAlignment = Alignment.CenterVertically,
@@ -233,7 +233,7 @@ private fun NutrientsScreenContent(
 
                             NutrientDetails(
                                 modifier = Modifier
-                                    .background(MaterialTheme.colorScheme.secondary,RoundedCornerShape(16.dp)),
+                                    .background(MaterialTheme.colorScheme.onBackground,RoundedCornerShape(16.dp)),
 
                                 borderStroke = BorderStroke(0.4.dp, Color.Black),
                                 icon = {
