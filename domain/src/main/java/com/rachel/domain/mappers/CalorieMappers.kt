@@ -20,6 +20,11 @@ import com.rachel.domain.models.Calorie
 import com.rachel.local.models.NutrientsEntity
 import com.rachel.remote.models.CalorieDto
 
+/**
+ * These functions facilitate data transformation
+ * and help maintain separation of concerns within the architecture.
+ * */
+
 fun CalorieDto?.toUiModel() =
     this?.let {
         Calorie(

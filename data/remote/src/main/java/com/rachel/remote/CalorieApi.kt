@@ -23,6 +23,13 @@ import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.request.get
 
+/** This class is responsible for making network calls.
+ * It sends a request to the api with a given food query and retrieves the calorie and other nutrients details.
+ * The getCalories method, sends a GET request to the API's nutrition endpoint
+ * and returns the response encapsulated in a NetworkResult object.
+ * The function uses a safeApiCall method to handle the API call safely.
+ * */
+
 class CalorieApi(private val client: HttpClient) {
 
     private val baseUrl = "https://api.calorieninjas.com/v1/nutrition"

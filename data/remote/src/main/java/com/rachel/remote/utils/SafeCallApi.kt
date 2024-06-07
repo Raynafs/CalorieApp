@@ -21,6 +21,17 @@ import io.ktor.client.call.body
 import io.ktor.client.statement.HttpResponse
 import io.ktor.http.HttpStatusCode
 
+/**
+ * The safeApiCall function executes an HTTP request and handles potential exceptions.
+ * It takes a lambda block that returns an HttpResponse and attempts to execute it.
+ * If successful, it checks the response status:
+ * if it's OK, it returns a successful NetworkResult with the response body;
+ * if it's Unauthorized, it returns a NetworkResult with an "Unauthorized" message;
+ * for other statuses, it returns a "Failed Request" message.
+ * If an exception occurs, it catches it and returns a NetworkResult with the error message.
+ * */
+
+
 internal suspend inline fun <reified T> safeApiCall(block: () -> HttpResponse): NetworkResult<T> {
     return try {
         val response = block()

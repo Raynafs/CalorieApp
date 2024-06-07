@@ -21,6 +21,11 @@ import androidx.room.RoomDatabase
 import com.rachel.local.dao.CalorieDao
 import com.rachel.local.models.NutrientsEntity
 
+/**
+ * NutrientsDatabase class represents a Room db,
+ * specifically designed to cache nutrient and calorie data.
+ **/
+
 @Database(entities = [NutrientsEntity::class], exportSchema = false, version = 7)
 abstract class NutrientsDatabase : RoomDatabase() {
 

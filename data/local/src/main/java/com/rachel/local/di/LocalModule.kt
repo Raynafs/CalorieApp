@@ -27,6 +27,9 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
+/**
+ * a Dagger Hilt module responsible for providing dependencies related to local storage using Room.
+ * */
 @Module
 @InstallIn(SingletonComponent::class)
 object LocalModule {

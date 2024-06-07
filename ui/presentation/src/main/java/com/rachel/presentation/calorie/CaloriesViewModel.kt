@@ -33,9 +33,14 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.launch
 
+/** CaloriesViewModel class is responsible for the interaction between the UI and data layer,
+ *  providing reactive updates to the UI based on user actions and data changes.
+ *  It uses kotlin flow and coroutines.
+ * */
+
 @OptIn(ExperimentalCoroutinesApi::class)
 @HiltViewModel
-class CaloriesViewModel @Inject constructor(private val repository: CalorieRepository) :
+open class CaloriesViewModel @Inject constructor(private val repository: CalorieRepository) :
     ViewModel() {
 
     private val _query = MutableStateFlow("")
@@ -55,11 +60,11 @@ class CaloriesViewModel @Inject constructor(private val repository: CalorieRepos
         get() = _isEmpty
 
     private val _state: MutableStateFlow<CaloriesUiState> = MutableStateFlow(CaloriesUiState.Loading)
-    val state: StateFlow<CaloriesUiState>
+    open val state: StateFlow<CaloriesUiState>
         get() = _state
 
     private val _calories = _query.flatMapLatest { repository.getCalories() }
-    val calories: Flow<List<Calorie>>
+    open val calories: Flow<List<Calorie>>
         get() = _calories
 
     private var searchJob: Job? = null
