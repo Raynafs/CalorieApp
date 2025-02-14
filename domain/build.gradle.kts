@@ -6,5 +6,4 @@ dependencies {
     implementation(project(AndroidModules.Data.remote))
 
     implementation(project(AndroidModules.Data.local))
-
 }

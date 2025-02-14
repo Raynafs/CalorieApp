@@ -36,8 +36,6 @@ import androidx.compose.material.icons.rounded.Blender
 import androidx.compose.material.icons.rounded.BreakfastDining
 import androidx.compose.material.icons.rounded.Coffee
 import androidx.compose.material.icons.rounded.Cookie
-import androidx.compose.material.icons.rounded.Egg
-import androidx.compose.material.icons.rounded.LocalFireDepartment
 import androidx.compose.material.icons.rounded.SetMeal
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
@@ -132,10 +130,7 @@ private fun NutrientsScreenContent(
                                 fontSize = MaterialTheme.typography.displaySmall.fontSize,
                                 color = Color.Black
                             )
-                            Text(
-                                text = "${calorie.servingSizeGrams}g serving",
-                                color = Color.Black
-                            )
+                            Text(text = "${calorie.servingSizeGrams}g serving", color = Color.Black)
                         }
                         Spacer(Modifier.height(20.dp))
                         Row(
@@ -144,30 +139,25 @@ private fun NutrientsScreenContent(
                             horizontalArrangement = Arrangement.SpaceEvenly
                         ) {
                             NutrientDetails(
-                                modifier = Modifier
-                                    .background(MaterialTheme.colorScheme.onBackground, RoundedCornerShape(16.dp)),
+                                modifier =
+                                    Modifier.background(
+                                        MaterialTheme.colorScheme.onBackground,
+                                        RoundedCornerShape(16.dp)
+                                    ),
                                 borderStroke = BorderStroke(0.4.dp, Color.Black),
-                                icon = {
-                                    Icon(
-
-                                        imageVector = Icons.Rounded.BakeryDining,
-                                        contentDescription = "",
-                                    )
-                                },
+                                icon = { Icon(imageVector = Icons.Rounded.BakeryDining, contentDescription = "") },
                                 title = "Calories",
                                 value = "${calorie.calories}kcal"
                             )
 
                             NutrientDetails(
-                                modifier = Modifier
-                                    .background(MaterialTheme.colorScheme.onPrimaryContainer,RoundedCornerShape(16.dp)),
+                                modifier =
+                                    Modifier.background(
+                                        MaterialTheme.colorScheme.onPrimaryContainer,
+                                        RoundedCornerShape(16.dp)
+                                    ),
                                 borderStroke = BorderStroke(0.4.dp, Color.Black),
-                                icon = {
-                                    Icon(
-                                        imageVector = Icons.Rounded.Blender,
-                                        contentDescription = "",
-                                    )
-                                },
+                                icon = { Icon(imageVector = Icons.Rounded.Blender, contentDescription = "") },
                                 title = "Cholesterol",
                                 value = "${calorie.cholesterolMilligrams}mg"
                             )
@@ -179,33 +169,25 @@ private fun NutrientsScreenContent(
                             horizontalArrangement = Arrangement.SpaceEvenly
                         ) {
                             NutrientDetails(
-                                modifier = Modifier
-                                    .background(MaterialTheme.colorScheme.onPrimary,
+                                modifier =
+                                    Modifier.background(
+                                        MaterialTheme.colorScheme.onPrimary,
                                         RoundedCornerShape(16.dp)
                                     ),
                                 borderStroke = BorderStroke(0.4.dp, Color.Black),
-                                icon = {
-                                    Icon(
-                                        imageVector = Icons.Rounded.Coffee,
-                                        contentDescription = "",
-                                    )
-                                },
+                                icon = { Icon(imageVector = Icons.Rounded.Coffee, contentDescription = "") },
                                 title = "Fat",
                                 value = "${calorie.fatTotalGrams}g"
                             )
 
                             NutrientDetails(
-                                modifier = Modifier
-                                    .background(MaterialTheme.colorScheme.onTertiary,
-                                        RoundedCornerShape(16.dp)),
-
+                                modifier =
+                                    Modifier.background(
+                                        MaterialTheme.colorScheme.onTertiary,
+                                        RoundedCornerShape(16.dp)
+                                    ),
                                 borderStroke = BorderStroke(0.4.dp, Color.Black),
-                                icon = {
-                                    Icon(
-                                        imageVector = Icons.Rounded.Cookie,
-                                        contentDescription = "",
-                                    )
-                                },
+                                icon = { Icon(imageVector = Icons.Rounded.Cookie, contentDescription = "") },
                                 title = "Sugar",
                                 value = "${calorie.sugarGrams}g"
                             )
@@ -215,33 +197,29 @@ private fun NutrientsScreenContent(
                             modifier = Modifier.fillMaxWidth(),
                             verticalAlignment = Alignment.CenterVertically,
                             horizontalArrangement = Arrangement.SpaceEvenly
-                        ){
+                        ) {
                             NutrientDetails(
-                                modifier = Modifier
-                                    .background(MaterialTheme.colorScheme.onTertiaryContainer,RoundedCornerShape(16.dp)),
-
+                                modifier =
+                                    Modifier.background(
+                                        MaterialTheme.colorScheme.onTertiaryContainer,
+                                        RoundedCornerShape(16.dp)
+                                    ),
                                 borderStroke = BorderStroke(0.4.dp, Color.Black),
                                 icon = {
-                                    Icon(
-                                        imageVector = Icons.Rounded.BreakfastDining,
-                                        contentDescription = "",
-                                    )
+                                    Icon(imageVector = Icons.Rounded.BreakfastDining, contentDescription = "")
                                 },
                                 title = "Protein",
                                 value = "${calorie.proteinGrams}g"
                             )
 
                             NutrientDetails(
-                                modifier = Modifier
-                                    .background(MaterialTheme.colorScheme.onBackground,RoundedCornerShape(16.dp)),
-
+                                modifier =
+                                    Modifier.background(
+                                        MaterialTheme.colorScheme.onBackground,
+                                        RoundedCornerShape(16.dp)
+                                    ),
                                 borderStroke = BorderStroke(0.4.dp, Color.Black),
-                                icon = {
-                                    Icon(
-                                        imageVector = Icons.Rounded.SetMeal,
-                                        contentDescription = "",
-                                    )
-                                },
+                                icon = { Icon(imageVector = Icons.Rounded.SetMeal, contentDescription = "") },
                                 title = "Carbohydrates",
                                 value = "${calorie. carbohydratesTotalGrams}g"
                             )

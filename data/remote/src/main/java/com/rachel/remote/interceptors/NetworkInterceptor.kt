@@ -16,6 +16,7 @@
 
 package com.rachel.remote.interceptors
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
@@ -24,15 +25,15 @@ import java.io.IOException
 import javax.inject.Inject
 import okhttp3.Interceptor
 import okhttp3.Response
-/**
- * The NetworkInterceptor class is responsible for intercepting network requests
- * and ensuring that there is an active internet connection.
- **/
 
+/**
+ * The NetworkInterceptor class is responsible for intercepting network requests and ensuring that
+ * there is an active internet connection.
+ */
 class NetworkInterceptor @Inject constructor(@ApplicationContext val context: Context) :
     Interceptor {
 
-        /** checks if there is an active internet connection*/
+    /** checks if there is an active internet connection */
     override fun intercept(chain: Interceptor.Chain): Response {
         if (isConnectionOn().not()) throw IOException("No Internet")
 
@@ -41,20 +42,19 @@ class NetworkInterceptor @Inject constructor(@ApplicationContext val context: Co
         return chain.proceed(chain.request())
     }
 
-
     private fun isConnectionOn(): Boolean {
         val manager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         return postAndroidMInternetCheck(manager)
     }
 
-    /** that the network is set up to access the internet.*/
+    /** that the network is set up to access the internet. */
+    @SuppressLint("MissingPermission")
     private fun postAndroidMInternetCheck(connectivityManager: ConnectivityManager): Boolean {
         val network = connectivityManager.activeNetwork
         val connection = connectivityManager.getNetworkCapabilities(network)
         return connection != null &&
             connection.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
     }
-
 
     private fun isInternetAvailable(): Boolean {
         return true

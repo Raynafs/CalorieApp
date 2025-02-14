@@ -22,9 +22,10 @@ import com.rachel.local.models.NutrientsEntity
 import kotlinx.coroutines.flow.Flow
 
 /**
- * The interface provides methods for querying and modifying the calories table in the Room database,
- * using Kotlin coroutines and Flow to provide asynchronous and reactive data access capabilities.
- * */
+ * The interface provides methods for querying and modifying the calories table in the Room
+ * database, using Kotlin coroutines and Flow to provide asynchronous and reactive data access
+ * capabilities.
+ */
 @Dao
 interface CalorieDao : BaseDao<NutrientsEntity> {
 

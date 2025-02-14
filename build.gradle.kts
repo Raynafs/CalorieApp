@@ -36,7 +36,7 @@ subprojects {
             trimTrailingWhitespace()
             indentWithTabs(2)
             indentWithSpaces(4)
-
+            toggleOffOn()
         }
 
         kotlinGradle {

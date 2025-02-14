@@ -19,12 +19,11 @@ package com.rachel.local.dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy.Companion.REPLACE
 
-
 /**
  * This interface abstracts away the repetitive boilerplate code for CRUD operations,
  *
- * providing a clean  API for interacting with database entities
- * */
+ * providing a clean API for interacting with database entities
+ */
 interface BaseDao<T> {
 
     @Insert(onConflict = REPLACE) suspend fun insert(item: T): Long

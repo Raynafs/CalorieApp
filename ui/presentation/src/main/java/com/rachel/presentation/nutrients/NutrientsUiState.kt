@@ -15,6 +15,7 @@
  */
 
 package com.rachel.presentation.nutrients
+
 import com.rachel.domain.models.Calorie
 
 sealed class NutrientsUiState {
