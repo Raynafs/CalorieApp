@@ -17,9 +17,10 @@
 package com.rachel.remote.models
 
 /**
- * This data class represents the outcome of a network operation.
- * It includes information about whether the operation was successful (isSuccessful), any resulting data (data), and a descriptive message (message).
- * This structure allows for clear communication of network operation outcomes within the application.
+ * This data class represents the outcome of a network operation. It includes information about
+ * whether the operation was successful (isSuccessful), any resulting data (data), and a descriptive
+ * message (message). This structure allows for clear communication of network operation outcomes
+ * within the application.
  */
 data class NetworkResult<T>(
     val isSuccessful: Boolean = false,

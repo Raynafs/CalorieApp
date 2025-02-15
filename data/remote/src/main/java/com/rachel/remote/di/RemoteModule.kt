@@ -39,12 +39,11 @@ import javax.inject.Singleton
 import kotlinx.serialization.json.Json
 import timber.log.Timber
 
-
 /**
- * This module sets up dependencies for remote network operations using Dagger Hilt.
- * It provides singleton instances of essential components for making HTTP requests and handling network interactions.
- * */
-
+ * This module sets up dependencies for remote network operations using Dagger Hilt. It provides
+ * singleton instances of essential components for making HTTP requests and handling network
+ * interactions.
+ */
 @Module
 @InstallIn(SingletonComponent::class)
 object RemoteModule {

@@ -21,7 +21,6 @@ import androidx.lifecycle.viewModelScope
 import com.rachel.domain.CalorieRepository
 import com.rachel.domain.models.Calorie
 import com.rachel.domain.models.Resource
-
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -33,11 +32,11 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.launch
 
-/** CaloriesViewModel class is responsible for the interaction between the UI and data layer,
- *  providing reactive updates to the UI based on user actions and data changes.
- *  It uses kotlin flow and coroutines.
- * */
-
+/**
+ * CaloriesViewModel class is responsible for the interaction between the UI and data layer,
+ * providing reactive updates to the UI based on user actions and data changes. It uses kotlin flow
+ * and coroutines.
+ */
 @OptIn(ExperimentalCoroutinesApi::class)
 @HiltViewModel
 open class CaloriesViewModel @Inject constructor(private val repository: CalorieRepository) :

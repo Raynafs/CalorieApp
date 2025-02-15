@@ -70,12 +70,10 @@ import com.rachel.presentation.R
 import com.rachel.presentation.navigation.Screens
 
 /**
- * This is the screen the first screen the user interacts with.
- * It welcomes the user and enables them to search for the food they would like
- * then gives an output of the name of the food and a few of nutrients.
- * */
-
-
+ * This is the screen the first screen the user interacts with. It welcomes the user and enables
+ * them to search for the food they would like then gives an output of the name of the food and a
+ * few of nutrients.
+ */
 @Composable
 fun CaloriesScreenContent(
     navController: NavController,

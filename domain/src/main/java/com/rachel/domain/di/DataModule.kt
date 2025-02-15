@@ -16,7 +16,6 @@
 
 package com.rachel.domain.di
 
-
 import com.rachel.domain.CalorieRepository
 import com.rachel.domain.DefaultCalorieRepository
 import com.rachel.local.dao.CalorieDao

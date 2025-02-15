@@ -35,9 +35,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.rachel.domain.models.Calorie
 
-
 @Composable
-fun CalorieItem(modifier:Modifier, calorie: Calorie, block: () -> Unit) {
+fun CalorieItem(modifier: Modifier, calorie: Calorie, block: () -> Unit) {
     Spacer(modifier = Modifier.height(8.dp))
     Card(
         modifier = Modifier.fillMaxWidth().padding(16.dp),
